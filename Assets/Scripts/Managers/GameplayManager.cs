@@ -26,17 +26,4 @@ public class GameplayManager : MonoBehaviour
     {
         speed = 5f;
     }
-
-    void Update()
-    {
-        //TODO: Delete test control
-        if (Input.GetKey(KeyCode.A))
-        {
-            speed = 15f;
-        }
-        else
-        {
-            speed = 0f;
-        }
-    }
 }

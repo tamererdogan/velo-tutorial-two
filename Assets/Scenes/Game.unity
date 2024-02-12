@@ -241,6 +241,74 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1001 &1024343845
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4630555137823485621, guid: 8902635fd7d00934383298ee17636da4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630555137823485621, guid: 8902635fd7d00934383298ee17636da4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630555137823485621, guid: 8902635fd7d00934383298ee17636da4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630555137823485621, guid: 8902635fd7d00934383298ee17636da4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630555137823485621, guid: 8902635fd7d00934383298ee17636da4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630555137823485621, guid: 8902635fd7d00934383298ee17636da4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630555137823485621, guid: 8902635fd7d00934383298ee17636da4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630555137823485621, guid: 8902635fd7d00934383298ee17636da4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630555137823485621, guid: 8902635fd7d00934383298ee17636da4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630555137823485621, guid: 8902635fd7d00934383298ee17636da4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406810984660890639, guid: 8902635fd7d00934383298ee17636da4,
+        type: 3}
+      propertyPath: m_Name
+      value: MaleCharacter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8902635fd7d00934383298ee17636da4, type: 3}
 --- !u!1 &1537877940
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +320,6 @@ GameObject:
   - component: {fileID: 1537877942}
   - component: {fileID: 1537877941}
   - component: {fileID: 1537877944}
-  - component: {fileID: 1537877943}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -281,28 +348,12 @@ Transform:
   m_GameObject: {fileID: 1537877940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7562973, y: -263.53055, z: 146.74483}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1537877943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537877940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 603d3a3f053dcd646bb4bae1502b3445, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 5406810984660890639, guid: 8902635fd7d00934383298ee17636da4,
-    type: 3}
-  positionOffset: {x: 0, y: 0, z: 2}
-  rotationOffset: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &1537877944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,3 +513,4 @@ SceneRoots:
   - {fileID: 2045079577}
   - {fileID: 296834913}
   - {fileID: 1537877942}
+  - {fileID: 1024343845}

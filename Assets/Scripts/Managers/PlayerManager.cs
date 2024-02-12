@@ -1,44 +1,48 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject playerPrefab;
-
-    [SerializeField]
-    Vector3 positionOffset;
-
-    [SerializeField]
-    Quaternion rotationOffset;
-
-    GameObject playerHolder;
+    float jumpForce = 200f;
 
     Animator animator;
 
+    Rigidbody rb;
+
+    bool isJump = false;
+    bool isSlide = false;
+
     void Start()
     {
-        playerHolder = new GameObject("Player");
-        GameObject player = Instantiate(
-            playerPrefab,
-            Vector3.zero,
-            Quaternion.identity,
-            playerHolder.transform
-        );
-        playerHolder.transform.position = positionOffset;
-        playerHolder.transform.rotation = rotationOffset;
-        animator = player.GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        // animator.
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!isSlide && !isJump && Input.GetKeyDown(KeyCode.W))
         {
-            animator.Play("Jump");
+            rb.AddForce(Vector3.up * jumpForce);
+            isJump = true;
         }
-        // else
-        // {
-        //     animator.Play("Run Forward");
-        // }
+
+        if (!isSlide && !isJump && Input.GetKeyDown(KeyCode.S))
+            isSlide = true;
+
+        animator.SetBool("Jump", isJump);
+        animator.SetBool("Slide", isSlide);
+    }
+
+    void SlideAnimExit()
+    {
+        isSlide = false;
+        animator.SetBool("Slide", isSlide);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+            isJump = false;
     }
 }
