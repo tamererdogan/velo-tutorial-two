@@ -13,11 +13,32 @@ public class PlayerManager : MonoBehaviour
 
     GameObject playerHolder;
 
+    Animator animator;
+
     void Start()
     {
         playerHolder = new GameObject("Player");
-        Instantiate(playerPrefab, Vector3.zero, Quaternion.identity, playerHolder.transform);
+        GameObject player = Instantiate(
+            playerPrefab,
+            Vector3.zero,
+            Quaternion.identity,
+            playerHolder.transform
+        );
         playerHolder.transform.position = positionOffset;
         playerHolder.transform.rotation = rotationOffset;
+        animator = player.GetComponentInChildren<Animator>();
+    }
+
+    void Update()
+    {
+        // animator.
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.Play("Jump");
+        }
+        // else
+        // {
+        //     animator.Play("Run Forward");
+        // }
     }
 }

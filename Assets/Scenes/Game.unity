@@ -302,7 +302,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 5406810984660890639, guid: 8902635fd7d00934383298ee17636da4,
     type: 3}
   positionOffset: {x: 0, y: 0, z: 2}
-  rotationOffset: {x: 0, y: 0.09584575, z: 0, w: 0.9953962}
+  rotationOffset: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &1537877944
 MonoBehaviour:
   m_ObjectHideFlags: 0
