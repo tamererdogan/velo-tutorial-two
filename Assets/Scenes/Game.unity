@@ -299,8 +299,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603d3a3f053dcd646bb4bae1502b3445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 8408116874836374016, guid: 38f70d9821f62c940b0f8f6e01c3eab3,
+  playerPrefab: {fileID: 5406810984660890639, guid: 8902635fd7d00934383298ee17636da4,
     type: 3}
+  positionOffset: {x: 0, y: 0, z: 2}
+  rotationOffset: {x: 0, y: 0.09584575, z: 0, w: 0.9953962}
 --- !u!114 &1537877944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de4b8e957a691d42a8c962dcc1f7dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pathSize: 40
   pathPrefab: {fileID: 6875433271658225588, guid: 0289868a60870234bb1af5786ba2cf35,
     type: 3}
 --- !u!1 &2045079574

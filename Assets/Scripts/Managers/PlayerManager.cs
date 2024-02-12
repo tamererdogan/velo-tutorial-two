@@ -5,12 +5,19 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     GameObject playerPrefab;
 
+    [SerializeField]
+    Vector3 positionOffset;
+
+    [SerializeField]
+    Quaternion rotationOffset;
+
     GameObject playerHolder;
 
     void Start()
     {
         playerHolder = new GameObject("Player");
         Instantiate(playerPrefab, Vector3.zero, Quaternion.identity, playerHolder.transform);
-        playerHolder.transform.position = new Vector3(0, 0.5f, 2);
+        playerHolder.transform.position = positionOffset;
+        playerHolder.transform.rotation = rotationOffset;
     }
 }
