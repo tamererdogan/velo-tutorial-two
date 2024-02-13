@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     Animator animator;
 
     Rigidbody rb;
+    BoxCollider boxCollider;
 
     bool isJump = false;
     bool isSlide = false;
@@ -17,6 +18,7 @@ public class PlayerManager : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        boxCollider = GetComponent<BoxCollider>();
     }
 
     void Update()
@@ -28,7 +30,11 @@ public class PlayerManager : MonoBehaviour
         }
 
         if (!isSlide && !isJump && Input.GetKeyDown(KeyCode.S))
+        {
             isSlide = true;
+            boxCollider.center = new Vector3(0, 0.35f, 0);
+            boxCollider.size = new Vector3(0.5f, 0.7f, 0.5f);
+        }
 
         animator.SetBool("Jump", isJump);
         animator.SetBool("Slide", isSlide);
@@ -38,6 +44,8 @@ public class PlayerManager : MonoBehaviour
     {
         isSlide = false;
         animator.SetBool("Slide", isSlide);
+        boxCollider.center = new Vector3(0, 0.9f, 0);
+        boxCollider.size = new Vector3(0.5f, 1.8f, 0.5f);
     }
 
     void OnCollisionEnter(Collision collision)
