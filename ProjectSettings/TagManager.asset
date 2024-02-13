@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Coin
   - Card
+  - Obstacle
   layers:
   - Default
   - TransparentFX
