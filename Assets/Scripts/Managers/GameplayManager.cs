@@ -66,4 +66,10 @@ public class GameplayManager : MonoBehaviour
         score += point;
         UIManager.Instance.UpdateScore(score);
     }
+
+    public void HitObstacle()
+    {
+        health -= 1;
+        UIManager.Instance.UpdateHealth(health);
+    }
 }

@@ -593,7 +593,12 @@ PrefabInstance:
     - target: {fileID: 797365335724862312, guid: 8902635fd7d00934383298ee17636da4,
         type: 3}
       propertyPath: jumpForce
-      value: 300
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 797365335724862312, guid: 8902635fd7d00934383298ee17636da4,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4630555137823485621, guid: 8902635fd7d00934383298ee17636da4,
         type: 3}
@@ -660,6 +665,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MaleCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 6159081615734534930, guid: 8902635fd7d00934383298ee17636da4,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -696,7 +706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb1aad9b522bb26418d7cf48eca685f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedUpValue: 1
+  speedUpValue: 0.05
 --- !u!4 &1537877942
 Transform:
   m_ObjectHideFlags: 0

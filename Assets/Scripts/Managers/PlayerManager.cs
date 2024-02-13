@@ -23,22 +23,19 @@ public class PlayerManager : MonoBehaviour
 
     int currentPosition = 0;
 
-    Vector3 wantedPosition;
-
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
-        wantedPosition = gameObject.transform.position;
     }
 
     void Update()
     {
         if (!isSlide && !isJump && Input.GetKeyDown(KeyCode.W))
         {
-            rb.AddForce(Vector3.up * jumpForce);
             isJump = true;
+            rb.AddForce(Vector3.up * jumpForce);
         }
 
         if (!isSlide && !isJump && Input.GetKeyDown(KeyCode.S))
@@ -49,22 +46,17 @@ public class PlayerManager : MonoBehaviour
         }
 
         if (currentPosition != -1 && Input.GetKeyDown(KeyCode.A))
-        {
             currentPosition -= 1;
-            wantedPosition += Vector3.left * moveStep;
-        }
 
         if (currentPosition != 1 && Input.GetKeyDown(KeyCode.D))
-        {
             currentPosition += 1;
-            wantedPosition += Vector3.right * moveStep;
-        }
 
-        gameObject.transform.position = Vector3.Lerp(
-            gameObject.transform.position,
-            wantedPosition,
+        float wantedX = Mathf.Lerp(
+            rb.position.x,
+            currentPosition * moveStep,
             moveSpeed * Time.deltaTime
         );
+        rb.MovePosition(new Vector3(wantedX, rb.position.y, rb.position.z));
 
         animator.SetBool("Jump", isJump);
         animator.SetBool("Slide", isSlide);
