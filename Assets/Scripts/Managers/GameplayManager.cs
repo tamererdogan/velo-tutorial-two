@@ -49,6 +49,9 @@ public class GameplayManager : MonoBehaviour
 
     public void Collect(string collactableTagName)
     {
+        if (PlayerManager.Instance.isBlink)
+            return;
+
         float point;
         switch (collactableTagName)
         {
@@ -69,7 +72,11 @@ public class GameplayManager : MonoBehaviour
 
     public void HitObstacle()
     {
+        if (PlayerManager.Instance.isBlink)
+            return;
+
         health -= 1;
+        StartCoroutine(PlayerManager.Instance.Blink());
         UIManager.Instance.UpdateHealth(health);
     }
 }

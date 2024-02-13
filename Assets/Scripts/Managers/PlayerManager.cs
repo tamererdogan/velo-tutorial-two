@@ -1,7 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    //SINGLETON
+    public static PlayerManager Instance { get; private set; }
+
     [SerializeField]
     float moveStep = 2f;
 
@@ -17,17 +21,36 @@ public class PlayerManager : MonoBehaviour
 
     BoxCollider boxCollider;
 
+    SkinnedMeshRenderer skinnedMeshRenderer;
+
     bool isJump = false;
 
     bool isSlide = false;
 
     int currentPosition = 0;
 
+    public bool isBlink { get; private set; }
+
+    //SINGLETON
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
+        isBlink = false;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
+        skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
     }
 
     void Update()
@@ -56,10 +79,28 @@ public class PlayerManager : MonoBehaviour
             currentPosition * moveStep,
             moveSpeed * Time.deltaTime
         );
+
         rb.MovePosition(new Vector3(wantedX, rb.position.y, rb.position.z));
 
         animator.SetBool("Jump", isJump);
         animator.SetBool("Slide", isSlide);
+    }
+
+    public IEnumerator Blink()
+    {
+        isBlink = true;
+        skinnedMeshRenderer.material.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        skinnedMeshRenderer.material.color = Color.white;
+        yield return new WaitForSeconds(0.2f);
+        skinnedMeshRenderer.material.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        skinnedMeshRenderer.material.color = Color.white;
+        yield return new WaitForSeconds(0.2f);
+        skinnedMeshRenderer.material.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        skinnedMeshRenderer.material.color = Color.white;
+        isBlink = false;
     }
 
     void SlideAnimExit()
