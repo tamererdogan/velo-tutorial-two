@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -76,7 +77,35 @@ public class GameplayManager : MonoBehaviour
             return;
 
         health -= 1;
-        StartCoroutine(PlayerManager.Instance.Blink());
         UIManager.Instance.UpdateHealth(health);
+        StartCoroutine(PlayerManager.Instance.Blink());
+
+        if (health <= 0)
+            gameOverAction();
+    }
+
+    private void gameOverAction()
+    {
+        Time.timeScale = 0f;
+        float highScore = PlayerPrefs.GetFloat("highScore", 0f);
+        if (score > highScore)
+        {
+            PlayerPrefs.SetFloat("highScore", score);
+            highScore = score;
+        }
+
+        UIManager.Instance.OpenGameOverPanel(score, highScore);
+    }
+
+    public void playAgainAction()
+    {
+        Time.timeScale = 1.0f;
+        UIManager.Instance.CloseGameOverPanel();
+        SceneManager.LoadScene("Game");
+    }
+
+    public void exitGameAction()
+    {
+        Application.Quit();
     }
 }
