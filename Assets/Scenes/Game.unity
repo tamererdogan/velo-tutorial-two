@@ -585,6 +585,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 797365335724862312, guid: 8902635fd7d00934383298ee17636da4,
+        type: 3}
+      propertyPath: moveStep
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 797365335724862312, guid: 8902635fd7d00934383298ee17636da4,
+        type: 3}
+      propertyPath: jumpForce
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 4630555137823485621, guid: 8902635fd7d00934383298ee17636da4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -686,7 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb1aad9b522bb26418d7cf48eca685f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedUpValue: 5
+  speedUpValue: 1
 --- !u!4 &1537877942
 Transform:
   m_ObjectHideFlags: 0
