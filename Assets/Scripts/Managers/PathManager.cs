@@ -42,6 +42,8 @@ public class PathManager : MonoBehaviour
             pathHolder.transform
         );
 
+        pathOne.GetComponent<LevelManager>().GenerateLevel();
+
         paths.Add(pathOne);
     }
 
@@ -61,13 +63,14 @@ public class PathManager : MonoBehaviour
                 Quaternion.identity,
                 pathHolder.transform
             );
+            pathTwo.GetComponent<LevelManager>().GenerateLevel();
             paths.Add(pathTwo);
             return;
         }
 
         paths[0].transform.position += new Vector3(0, 0, pathSize * 2);
-        paths[0].GetComponent<LevelManager>().GenerateLevel();
         paths.Reverse();
+        paths[0].GetComponent<LevelManager>().GenerateLevel();
 
         GameplayManager.Instance.SpeedUp();
     }
