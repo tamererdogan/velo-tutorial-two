@@ -66,6 +66,7 @@ public class PathManager : MonoBehaviour
         }
 
         paths[0].transform.position += new Vector3(0, 0, pathSize * 2);
+        paths[0].GetComponent<LevelManager>().GenerateLevel();
         paths.Reverse();
 
         GameplayManager.Instance.SpeedUp();
