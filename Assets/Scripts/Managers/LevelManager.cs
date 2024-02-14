@@ -47,7 +47,11 @@ public class LevelManager : MonoBehaviour
             {
                 string objectName = objectNames[Random.Range(0, objectNames.Length)];
                 GameObject item = ObjectPoolManager.Instance.FindOrCreate(objectName);
-                item.transform.position = spawnPoints[i, j];
+                item.transform.position = new Vector3(
+                    spawnPoints[i, j].x,
+                    item.transform.position.y,
+                    spawnPoints[i, j].z
+                );
                 item.transform.SetParent(levelContainerTransform.transform, false);
                 item.SetActive(true);
                 rowObjects.Add(item);
