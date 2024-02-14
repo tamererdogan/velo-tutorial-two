@@ -1384,7 +1384,6 @@ Transform:
   - {fileID: 2607264331023797735}
   - {fileID: 7300472860755551857}
   - {fileID: 3189356691692308416}
-  - {fileID: 3591037254929653522}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7126062693598002424
@@ -1420,43 +1419,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 748957eafc3b19f4aae5190db96bc58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelContainer: {fileID: 7214714609024808411}
-  prefabs:
-  - {fileID: 1788889753981395298, guid: c6d9a9615caf2cf4fab4af28418a2e46, type: 3}
-  - {fileID: 5998812789557897183, guid: 237d8c88f5d47f64eb21c1d7e7930c3c, type: 3}
-  - {fileID: 5598348282526767411, guid: ce9cd71ecfa59544db81d6c1a65dcb70, type: 3}
-  - {fileID: 4660358472299295069, guid: c5709c06fadb32a4a9808d6e55fa77a7, type: 3}
---- !u!1 &7214714609024808411
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3591037254929653522}
-  m_Layer: 0
-  m_Name: LevelContainer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3591037254929653522
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7214714609024808411}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 857789514957035508}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7423631635006685829
 GameObject:
   m_ObjectHideFlags: 0
