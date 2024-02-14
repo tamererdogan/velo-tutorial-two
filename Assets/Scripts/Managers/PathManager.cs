@@ -42,6 +42,8 @@ public class PathManager : MonoBehaviour
             pathHolder.transform
         );
 
+        pathOne.GetComponent<LevelManager>().GenerateLevel(true);
+
         paths.Add(pathOne);
     }
 
@@ -61,10 +63,12 @@ public class PathManager : MonoBehaviour
                 Quaternion.identity,
                 pathHolder.transform
             );
+            pathTwo.GetComponent<LevelManager>().GenerateLevel();
             paths.Add(pathTwo);
             return;
         }
 
+        paths[0].GetComponent<LevelManager>().GenerateLevel();
         paths[0].transform.position += new Vector3(0, 0, pathSize * 2);
         paths.Reverse();
 

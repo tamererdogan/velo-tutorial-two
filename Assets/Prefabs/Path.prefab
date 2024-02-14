@@ -1354,6 +1354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 857789514957035508}
   - component: {fileID: 7126062693598002424}
+  - component: {fileID: 1486175781283149312}
   m_Layer: 0
   m_Name: Path
   m_TagString: Ground
@@ -1406,6 +1407,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 0.1, z: 40}
   m_Center: {x: 0, y: -0.05, z: 20}
+--- !u!114 &1486175781283149312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6875433271658225588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 748957eafc3b19f4aae5190db96bc58e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7423631635006685829
 GameObject:
   m_ObjectHideFlags: 0
