@@ -2,6 +2,13 @@
 
 Velo Games Sanal Staj Programı için yapılmış olan ikinci görevdir.
 
+**Kontroller**
+
+- W = Zıplama
+- S = Kayma
+- A = Sola Geçiş
+- D = Sağa Geçiş
+
 **Kullanılan Assetler**
 
 - ![POLYGON Starter Pack - Low Poly 3D Art by Synty](https://assetstore.unity.com/packages/essentials/tutorial-projects/polygon-starter-pack-low-poly-3d-art-by-synty-156819#content)
